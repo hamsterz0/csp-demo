@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>Content Security Policy</title>
+		<script nonce=<%=nonce%> src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<p> Content Security Policy </p>
+		<script nonce=<%=nonce%> src="scripts/logger.js"></script>
+		<script>
+			console.log(123);
+		</script>
+	</body>
+</html>
+
+

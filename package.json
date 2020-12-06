@@ -1,0 +1,22 @@
+{
+  "name": "csp-demo",
+  "version": "1.0.0",
+  "description": "a simple csp demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx nodemon index.js"
+  },
+  "keywords": [
+    "csp"
+  ],
+  "author": "arnav",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7"
+  }
+}
