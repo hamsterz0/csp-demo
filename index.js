@@ -5,7 +5,7 @@ const app = express()
 const fs = require('fs')
 const crypto = require('crypto');
 
-
+app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json({
 	type: ['application/json', 'application/csp-report', 'application/reports+json']
 }))
@@ -46,12 +46,26 @@ let nonce = crypto.randomBytes(16).toString('base64');
 // });
 
 
-//Example: Nonce + Strict Dynamics based CSPs
-
-
-
 //Example: Nonce + Hashes Dynamics based CSPs
+//---------------------------------------------
+//app.use((req, res, next) => {
+//	res.setHeader(
+// 		'Content-Security-Policy',
+// 		`script-src 'nonce-${nonce}' 'unsafe-hashes' 'sha256-zEpJladX5m+s8O6RXyBKKbGEEqf1yi6z2U24vZYNVqE='; base-uri 'none'; object-src 'none';`
+// 	)
+//	next();
+//});
 
+
+//Example: Nonce + Strict Dynamics based CSPs
+//----------------------------------------------
+//app.use((req, res, next) => {
+//	res.setHeader(
+// 		'Content-Security-Policy',
+// 		`script-src 'nonce-${nonce}' 'strict-dynamic'; base-uri 'none'; object-src 'none';`
+// 	)
+//	next();
+//});
 
 
 // Example: Two CSP Headers 
@@ -111,18 +125,18 @@ let nonce = crypto.randomBytes(16).toString('base64');
 // 	next();
 // });
 
-
-
 app.get('/', (req, res) => {
-	res.render('index.ejs', {nonce: nonce});
+    const name = decodeURIComponent(req.query.name);
+    console.log(name)
+	res.render('index.ejs', {nonce: nonce, name: name});
 });
+
 
 app.post('/__csp_report', (req, res) => {
 	console.log(req.body);
-	console.log('=======================================================')
 })
 
 const server = app.listen(process.env.PORT || 9000, () => {
 	const {port} = server.address();
-	console.log(`LET US BEGIN .... PORT ${port}`);
+	console.log(`The server is running on port: ${port} :)`);
 });

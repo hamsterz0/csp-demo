@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 <html>
-
 	<head>
 		<meta charset="UTF-8" />
 		<title>Content Security Policy</title>
@@ -9,10 +8,15 @@
 	</head>
 
 	<body>
-		<p> Content Security Policy </p>
+        <p> Hello <%- name %>! </p>
+
+
+        <img onerror="console.log('this is from img tag on error')" src=x>
+
+
 		<script nonce=<%=nonce%> src="scripts/logger.js"></script>
-		<script>
-			console.log(123);
+		<script nonce=<%=nonce%>>
+            console.log('This is from the inline script tag')
 		</script>
 	</body>
 </html>
