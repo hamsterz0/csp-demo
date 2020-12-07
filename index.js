@@ -21,7 +21,7 @@ let nonce = crypto.randomBytes(16).toString('base64');
 
 
 // Example: Whitelist based CSPs
-//--------------------------------
+//-------------------------------
 // app.use((req, res, next) => {
 // 	res.setHeader(
 // 		'Content-Security-Policy',
@@ -36,7 +36,7 @@ let nonce = crypto.randomBytes(16).toString('base64');
 
 
 // Example: Nonce based CSPs 
-//--------------------------------
+//---------------------------
 // app.use((req, res, next) => {
 // 	res.setHeader(
 // 		'Content-Security-Policy',
@@ -47,7 +47,7 @@ let nonce = crypto.randomBytes(16).toString('base64');
 
 
 //Example: Nonce + Hashes Dynamics based CSPs
-//---------------------------------------------
+//--------------------------------------------
 //app.use((req, res, next) => {
 //	res.setHeader(
 // 		'Content-Security-Policy',
@@ -58,7 +58,7 @@ let nonce = crypto.randomBytes(16).toString('base64');
 
 
 //Example: Nonce + Strict Dynamics based CSPs
-//----------------------------------------------
+//--------------------------------------------
 //app.use((req, res, next) => {
 //	res.setHeader(
 // 		'Content-Security-Policy',
@@ -69,7 +69,7 @@ let nonce = crypto.randomBytes(16).toString('base64');
 
 
 // Example: Two CSP Headers 
-//--------------------------------
+//--------------------------
 // app.use((req, res, next) => {
 // 	res.setHeader(
 // 		'Content-Security-Policy',
@@ -83,7 +83,7 @@ let nonce = crypto.randomBytes(16).toString('base64');
 
 
 // Example: Two CSP Directives semi colon separated
-//--------------------------------
+//--------------------------------------------------
 // app.use((req, res, next) => {
 // 	res.setHeader(
 // 		'Content-Security-Policy',
@@ -94,7 +94,7 @@ let nonce = crypto.randomBytes(16).toString('base64');
 
 
 // Example: Comma separated 
-//--------------------------------
+//--------------------------
 // app.use((req, res, next) => {
 // 	res.setHeader(
 // 		'Content-Security-Policy',
@@ -104,8 +104,8 @@ let nonce = crypto.randomBytes(16).toString('base64');
 // });
 
 
-// Example: Nonce based CSPs enforcement with report-uri. 
-//------------------------------------------------------------------------------
+// Example: Nonce based CSPs enforcement with report-uri
+//-------------------------------------------------------
 // app.use((req, res, next) => {
 // 	res.setHeader(
 // 		'Content-Security-Policy',
@@ -115,8 +115,8 @@ let nonce = crypto.randomBytes(16).toString('base64');
 // });
 
 
-// Example: Nonce based CSPs enforcement with report-sample and report-uri. 
-//------------------------------------------------------------------------------
+// Example: Nonce based CSPs enforcement with report-sample and report-uri
+//-------------------------------------------------------------------------
 // app.use((req, res, next) => {
 // 	res.setHeader(
 // 		'Content-Security-Policy',
