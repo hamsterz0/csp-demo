@@ -68,7 +68,7 @@ let nonce = crypto.randomBytes(16).toString('base64');
 //});
 
 
-// Example: Two CSP Headers 
+// Example: Two CSP Policies 
 //--------------------------
 // app.use((req, res, next) => {
 // 	res.setHeader(
