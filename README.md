@@ -14,3 +14,4 @@ $ npm start
 
 
 
+'strict-dynamic' 'nonce-DONT+TOUCH+TOOL+WILL+AUTOFILL+BASED+ON+SERVED+NONCE'

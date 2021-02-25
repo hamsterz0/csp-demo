@@ -8,16 +8,16 @@
 	</head>
 
 	<body>
-        <p> Hello <%- name %>! </p>
+      <!--   <p> Hello <%- name %>! </p>
+        <img src=x onerror="console.log('aaa')">
+ -->
+        <iframe src='/iframe1' sandbox="allow-same-origin" width="400" height="400"></iframe>
 
 
-        <img onerror="console.log('this is from img tag on error')" src=x>
-
-
-		<script nonce=<%=nonce%> src="scripts/logger.js"></script>
+		<!-- <script src="scripts/logger.js"></script>
 		<script nonce=<%=nonce%>>
             console.log('This is from the inline script tag')
-		</script>
+		</script> -->
 	</body>
 </html>
 

@@ -125,11 +125,47 @@ let nonce = crypto.randomBytes(16).toString('base64');
 // 	next();
 // });
 
+// app.use('/', (req, res, next) => {
+// 	res.setHeader(
+// 		'Content-Security-Policy',
+// 		`connect-src 'self'; frame-ancestors 'self'`
+// 		)
+// 	next();
+// });
+
+// app.use('/iframe1', (req, res, next) => {
+// 	res.setHeader(
+// 		'Content-Security-Policy',
+// 		`connect-src 'self'; frame-ancestors 'self';`
+// 		)
+// 	next();
+// })
+
+// app.use('/iframe2', (req, res, next) => {
+// 	res.setHeader(
+// 		'Content-Security-Policy',
+// 		`connect-src 'self'; frame-ancestors 'null';`
+// 		)
+// 	next();
+// })
+
 app.get('/', (req, res) => {
     const name = decodeURIComponent(req.query.name);
     console.log(name)
 	res.render('index.ejs', {nonce: nonce, name: name});
 });
+
+app.get('/iframe1', (req, res) => {
+	res.render('iframe1.ejs', {nonce: nonce});
+});
+
+app.get('/iframe2', (req, res) => {
+	res.render('iframe2.ejs', {nonce: nonce});
+});
+
+app.get('/test', (req, res) => {
+	res.render('test.ejs')
+})
 
 
 app.post('/__csp_report', (req, res) => {
